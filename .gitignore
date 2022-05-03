@@ -1,0 +1,5 @@
+# compiled files
+flex/lex.yy.c
+bison/cminus_syntax.gv
+bison/cminus_syntax.tab.c
+bison/cminus_syntax.tab.h
