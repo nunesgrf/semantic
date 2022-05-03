@@ -1,13 +1,27 @@
 int main () {
+    int unused;
+    int multiplesScopes;
+    int duplicated;
+    int duplicated;
+
+    while(undeclared == 15) {
+        int multiplesScopes;
+        int scopeOne;
+    }
+
     int result;
     int fat;
     int aux;
     result = 1;
     fat = 10;
     aux = fat;
+
+
     while(aux > 0){
+        int scopeOne;
         result = aux * result;
         aux = aux - 1;
     }
+
     return result;
 }
