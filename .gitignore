@@ -8,3 +8,6 @@ a.out.dSYM/Contests/*
 #folder
 obj/*.o
 .vscode
+
+#bin
+a.out*
