@@ -6,7 +6,7 @@ compile:
 	gcc -g bison/cminus_syntax.tab.c flex/lex.yy.c obj/symbol_table.o obj/tree.o -I utils -I bison -I flex -Wall
 
 run:
-	./a.out tests/t_error02.c
+	./a.out
 	
 debug:
 	valgrind -v --tool=memcheck --leak-check=full --log-file="logfile.out" --show-leak-kinds=all --track-origins=yes ./a.out tests/t_correct02.c

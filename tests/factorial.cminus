@@ -1,0 +1,13 @@
+int main () {
+    int result;
+    int fat;
+    int aux;
+    result = 1;
+    fat = 10;
+    aux = fat;
+    while(aux > 0){
+        result = aux * result;
+        aux = aux - 1;
+    }
+    return result;
+}
