@@ -19,6 +19,7 @@ void yyerror(const char* e){
 	struct Token {
         int     line;
         int     column;
+        char    name[101];
     } token;
 }
 

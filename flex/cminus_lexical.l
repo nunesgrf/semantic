@@ -1,9 +1,9 @@
 %{
 #include <stdio.h>
 #include <string.h>
-#include "semantic.tab.h"
+#include "cminus_syntax.tab.h"
 
-#define PREPARATOKEN strcpy(yylval.token.nome, yytext); yylval.token.line = line; yylval.token.column = column
+#define PREPARATOKEN strcpy(yylval.token.name, yytext); yylval.token.line = line; yylval.token.column = column
 
 int column = 1;
 int line = 1;
