@@ -5,6 +5,7 @@
 %{
 
 #include <stdio.h>
+#include "tree.h"
 
 extern int yylex();
 extern FILE *yyin;
@@ -21,6 +22,7 @@ void yyerror(const char* e){
         int     column;
         char    name[101];
     } token;
+	struct Node* node;
 }
 
 %token <token> letter
