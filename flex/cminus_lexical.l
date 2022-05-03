@@ -96,3 +96,7 @@ comment   \/\*[^\*\/]*\*\/
 
 
 %%
+
+int yywrap() {
+  return 1;
+}
