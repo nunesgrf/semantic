@@ -74,8 +74,8 @@ comandos:
 comando :
     declaration op_pvirgula {}
 	| atribuicao op_pvirgula {}
-	| comandoIO parent_esq expressaoAdd parent_dir op_pvirgula {}
-	| cmd_return expressaoAdd op_pvirgula {}
+	| comandoIO parent_esq expressao parent_dir op_pvirgula {}
+	| cmd_return expressao op_pvirgula {}
 	| enquanto {}
 ;
 comandoIO :
