@@ -51,6 +51,8 @@ int memoryAddress = 0;
 %token <token> cmd_else
 %token <token> cmd_while
 %token <token> cmd_return
+%token <token> cmd_input
+%token <token> cmd_output
 %token <token> parent_esq
 %token <token> parent_dir
 %token <token> colch_esq
@@ -73,8 +75,13 @@ comandos:
 comando :
     declaration op_pvirgula {}
 	| atribuicao op_pvirgula {}
-	| cmd_return expressaoAdd op_pvirgula {}
+	| comandoIO parent_esq expressao parent_dir op_pvirgula {}
+	| cmd_return expressao op_pvirgula {}
 	| enquanto {}
+;
+comandoIO :
+	cmd_input {}
+	| cmd_output {}
 ;
 enquanto:
 	cmd_while {scope++;} parent_esq expressao parent_dir chave_esq comandos chave_dir {scope--;}

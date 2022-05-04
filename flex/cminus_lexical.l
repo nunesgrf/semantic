@@ -39,6 +39,8 @@ cmd_if		if
 cmd_else	else
 cmd_while	while
 cmd_return	return
+cmd_input input
+cmd_output output
 
 parent_esq [(]
 parent_dir [)]
@@ -86,6 +88,8 @@ comment   \/\*[^\*\/]*\*\/
 {cmd_else}			{PREPARATOKEN; column += yyleng;	return cmd_else;}
 {cmd_while}			{PREPARATOKEN; column += yyleng;	return cmd_while;}
 {cmd_return}		{PREPARATOKEN; column += yyleng;	return cmd_return;}
+{cmd_input}     {PREPARATOKEN; column += yyleng;	return cmd_input;}
+{cmd_output}     {PREPARATOKEN; column += yyleng;	return cmd_output;}
 
 {id}			    {PREPARATOKEN; column += yyleng;	return id;}
 
