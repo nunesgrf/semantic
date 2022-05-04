@@ -4,6 +4,7 @@
 %{
 
 #include <stdio.h>
+#include <string.h>
 #include "symbol_table.h"
 
 extern int yylex();
@@ -147,12 +148,11 @@ int main(){
     // #endif
 
 	char nomeArqCMINUS[64];
-	char nomePastaArqCMINUS[] = "./tests/";
 	FILE *arquivoCMINUS;
 
     printf("Insira o nome do arquivo dentro da pasta tests: ");
 	scanf("%s", nomeArqCMINUS);
-	strcat(nomePastaArqCMINUS, nomeArqCMINUS);
+
 	arquivoCMINUS = fopen(nomeArqCMINUS,"r");
 	if(!arquivoCMINUS){
 		printf("Nao foi possível abrir arquivo.\n");
@@ -165,8 +165,6 @@ int main(){
 
 
 	fclose(arquivoCMINUS);
-    //esvaziarTabela();
-    //esvaziarArvore();
 	yylex_destroy();
 	return 0;
 }
