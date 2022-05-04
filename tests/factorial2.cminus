@@ -1,0 +1,15 @@
+int main () {
+    int result;
+    int fat;
+    int aux;
+    result = 1;
+    input(fat);
+    aux = fat;
+
+    while(aux > 0){
+        result = aux * result;
+        aux = aux - 1;
+    }
+    output(result);
+    return 0;
+}
