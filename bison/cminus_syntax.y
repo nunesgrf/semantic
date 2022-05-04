@@ -108,7 +108,7 @@ expressaoMul:
 ;
 type:
 	tp_inteiro { $$ = "int"; }
-	| tp_vazio { $$ = "vazio"; }
+	| tp_vazio { $$ = "void"; }
 ;
 termo: 
 	parent_esq expressaoAdd parent_dir {}
@@ -147,27 +147,21 @@ int main(){
     // #endif
 
 	char nomeArqCMINUS[64];
-	//char nomePastaArqCMINUS[] = "./tests/";
+	char nomePastaArqCMINUS[] = "./tests/";
 	FILE *arquivoCMINUS;
 
     printf("Insira o nome do arquivo dentro da pasta tests: ");
 	scanf("%s", nomeArqCMINUS);
-	//strcat(nomePastaArqCMINUS, nomeArqCMINUS);
+	strcat(nomePastaArqCMINUS, nomeArqCMINUS);
 	arquivoCMINUS = fopen(nomeArqCMINUS,"r");
 	if(!arquivoCMINUS){
 		printf("Nao foi possível abrir arquivo.\n");
 		return -1;
 	}
 	yyin = arquivoCMINUS;
-
-    //escopo_atual = 0;
-    //escopo_ponteiro = 0;
-    //simbolos_ponteiro = -1;
-
 	yyparse();
 
 	printTable();
-    //imprimirTabelaSimbolos();
 
 
 	fclose(arquivoCMINUS);
